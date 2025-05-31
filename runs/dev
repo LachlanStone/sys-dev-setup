@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+sudo apt install -y golang fzf btop bc cargo nodejs npm
+cargo install stylua

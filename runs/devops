@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+sudo apt install -y ansible snap
+
+sudo snap install snapd
+sudo snap install --classic terraform 
+sudo snap install --classic opentofu
+sudo snap install --classic packer
