@@ -1,3 +1,21 @@
 #!/usr/bin/env bash
-sudo apt install -y golang fzf btop bc cargo nodejs npm
+sudo apt install -y golang 
+sudo apt install -y nodejs npm
+sudo apt install -y cargo
+
+# Install Rust using rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup-init.sh
+chmod +x rustup-init.sh
+./rustup-init.sh -y --default-toolchain stable --profile minimal
+rm rustup-init.sh
+source $HOME/.cargo/env
+
+# Install additional Rust tools
+rustup component add clippy
+rustup component add rustfmt
+
+# Update Rust toolchain
+rustup update stable
 cargo install stylua
+
+

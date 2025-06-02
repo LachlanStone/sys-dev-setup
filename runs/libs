@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo apt -y install git ripgrep jq tldr shutter python3-pip python3
+sudo apt -y install git ripgrep jq tldr shutter fzf bc
 
 # Setup tldr
 mkdir -p $HOME/.local/share/tldr
