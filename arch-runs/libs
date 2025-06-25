@@ -3,16 +3,16 @@ paru_ft() {
     sudo paru -S --noconfirm --needed "$1"
 }
 
-pamac_ft(){
-    sudo pamac -S --needed --noconfirm "$1"
+pacman_ft(){
+    sudo pacman -S --needed --noconfirm "$1"
 }
 
 # Setup the base tools on the enviroment
-pamac_ft install git ripgrep jq tldr shutter fzf bc
+pacman_ft install git ripgrep jq tldr shutter fzf bc
 
 # Setup tldr
 mkdir -p $HOME/.local/share/tldr
-pamac_ft tldr
+pacman_ft tldr
 tldr --update --color --auto-update-interval 5
 
 # Install TheFuc

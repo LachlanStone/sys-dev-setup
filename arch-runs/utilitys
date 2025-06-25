@@ -3,14 +3,14 @@ paru_ft() {
     sudo paru -S --noconfirm --needed "$1"
 }
 
-pamac_ft(){
-    sudo pamac -S --needed --noconfirm "$1"
+pacman_ft(){
+    sudo pacman -S --needed --noconfirm "$1"
 }
 
-pamac_ft wireguard wireguard-tools nmap
-pamac_ft lftp
-pamac_ft btop htop
-pamac_ft nfs-common rsync
+pacman_ft wireguard wireguard-tools nmap
+pacman_ft lftp
+pacman_ft btop htop
+pacman_ft nfs-common rsync
 
-# pamac_ft zram-generator zstd gambas3-gb-compress python-pyzstd \
+# pacman_ft zram-generator zstd gambas3-gb-compress python-pyzstd \
 #  python-zstandard zarchive lib32-zstd lz4 python-lz4 lib32-lz4

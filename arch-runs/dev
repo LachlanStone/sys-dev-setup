@@ -3,12 +3,12 @@ paru_ft() {
     sudo paru -S --noconfirm --needed "$1"
 }
 
-pamac_ft(){
-    sudo pamac -S --needed --noconfirm "$1"
+pacman_ft(){
+    sudo pacman -S --needed --noconfirm "$1"
 }
 
 
-pamac_ft nodejs npm cargo
+pacman_ft nodejs npm cargo
 
 # Install Rust using rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup-init.sh

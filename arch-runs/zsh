@@ -3,12 +3,12 @@ paru_ft() {
     sudo paru -S --noconfirm --needed "$1"
 }
 
-pamac_ft(){
-    sudo pamac -S --needed --noconfirm "$1"
+pacman_ft(){
+    sudo pacman -S --needed --noconfirm "$1"
 }
 
 # Install Zsh
-pamac_ft zsh bat -y
+pacman_ft zsh bat -y
 hash -r
 
 # Change the default shell to zsh

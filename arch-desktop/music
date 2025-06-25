@@ -3,9 +3,9 @@ paru_ft() {
     sudo paru -S --noconfirm --needed "$1"
 }
 
-pamac_ft(){
-    sudo pamac -S --needed --noconfirm "$1"
+pacman_ft(){
+    sudo pacman -S --needed --noconfirm "$1"
 }
 
 
-pamac_ft mopidy spotify-launcherw
+pacman_ft mopidy spotify-launcherw
