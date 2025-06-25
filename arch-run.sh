@@ -50,6 +50,6 @@ arch-desktop(){
   fi   
 }
 
+arch-required
 arch-runs
 arch-desktop
-arch-required

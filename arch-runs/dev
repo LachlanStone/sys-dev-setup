@@ -7,14 +7,13 @@ pacman_ft(){
     sudo pacman -S --needed --noconfirm "$1"
 }
 
-
-pacman_ft nodejs npm cargo
-
 # Install Rust using rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup-init.sh
 chmod +x rustup-init.sh
 ./rustup-init.sh -y --default-toolchain stable --profile minimal
 rm rustup-init.sh
+
+pacman_ft nodejs npm cargo
 
 source $HOME/.cargo/env
 
