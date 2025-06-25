@@ -24,6 +24,7 @@ arch-required(){
     debug "$(set_color green) Starting Arch CLI Install $(set_color)"      
     runs_dir=$(find "$script_dir"/arch-defaults -mindepth 1 -maxdepth 1 -executable)
     for components in $runs_dir; do
+        debug "$(set_color green) $components $(set_color)"      
         $components
     done
   fi
