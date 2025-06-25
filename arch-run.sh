@@ -22,16 +22,7 @@ debug() {
 arch-required(){
   if command -v pacman &> /dev/null; then
     sh "$script_dir"/arch-defaults/defaults
-    debug "$(set_color green) Starting Arch CLI Install $(set_color)"      
-    runs_dir=$(find "$script_dir"/arch-defaults -mindepth 1 -maxdepth 1 -executable)
-    for components in $runs_dir; do
-        if [ components == defaults ]; then
-          continue
-        else
-          debug "$(set_color green) $components $(set_color)"      
-          $components
-        fi
-    done
+    sh "$script_dir"/arch-defaults/dev
   fi
 }
 
