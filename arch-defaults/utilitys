@@ -12,5 +12,9 @@ pacman_ft lftp
 pacman_ft btop htop
 pacman_ft nfs-common rsync
 
-# pacman_ft zram-generator zstd gambas3-gb-compress python-pyzstd \
-#  python-zstandard zarchive lib32-zstd lz4 python-lz4 lib32-lz4
+# Setup Paru
+pacman_ft base-devel
+git clone https://aur.archlinux.org/paru.git
+pushd paru || exit
+makepkg -si
+popd || exit
