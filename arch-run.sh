@@ -19,6 +19,14 @@ debug() {
     echo "DEBUG: $1"
   fi
 }
+arch-required(){
+  sudo pacman -S --needed base-devel
+  git clone https://aur.archlinux.org/paru.git
+  pushd paru || exit
+  makepkg -si
+  popd || exit
+}
+
 
 arch-runs(){
   if command -v pacman &> /dev/null; then
@@ -44,3 +52,4 @@ arch-desktop(){
 
 arch-runs
 arch-desktop
+arch-required
