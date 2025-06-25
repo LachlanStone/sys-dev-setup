@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+sudo apt clean
+sudo apt update
+sudo apt install flatpak luarocks
+
+sudo flatpak install flathub io.neovim.nvim -y
+sudo luarocks install luacheck
+sudo luarocks install lua-language-server
+
+
+CURRENT_DIR=$PWD
+cd ~/.local/share/fonts
+rm -rf JetBrainsMono.zip.*
+rm -f JetBrainsMono.zip
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
+unzip -o JetBrainsMono.zip
+fc-cache -fv
+CD $CURRENT_DIR
+
+

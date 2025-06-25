@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+sudo apt install -y wireguard wireguard-tools
+sudo apt install -y nmap
+sudo apt install -y lftp
+sudo apt install -y neofetch
+sudo apt install -y btop htop
+sudo apt install -y nfs-common rsync
+sudo apt install -y stow

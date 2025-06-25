@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+paru_ft() {
+    sudo paru -S --noconfirm --needed "$1"
+}
+
+pamac_ft(){
+    sudo pamac -S --needed --noconfirm "$1"
+}
+
+
+pamac_ft nodejs npm cargo
+
+# Install Rust using rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup-init.sh
+chmod +x rustup-init.sh
+./rustup-init.sh -y --default-toolchain stable --profile minimal
+rm rustup-init.sh
+
+source $HOME/.cargo/env
+
+# Install additional Rust tools
+rustup component add clippy
+rustup component add rustfmt
+rustup update stable
+# Install Style Lua
+cargo install stylua
+
+

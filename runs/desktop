@@ -1,0 +1,8 @@
+#/bin/bash
+sudo apt install code -y
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install flathub app.zen_browser.zen -y
+
+# Testing these terminals once I pick one I will revert to here
+sudo apt install alacritty -y
+sudo snap install ghostty --classic

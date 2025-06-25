@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+paru_ft() {
+    sudo paru -S --noconfirm --needed "$1"
+}
+
+pamac_ft(){
+    sudo pamac -S --needed --noconfirm "$1"
+}
+# Install the docker components onto the system
+paru_ft docker docker-buildx docker-compose containerd
+# Create the docker group and add the current user to it:
+sudo groupadd docker
+sudo usermod -aG docker $USER

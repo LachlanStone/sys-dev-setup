@@ -6,6 +6,7 @@ mkdir -p $HOME/.local/share/tldr
 sudo apt install tldr -y
 tldr --update --color --auto-update-interval 5
 
-# Install TheFuck
+# Install TheFuc
+sudo apt install snapd -y
 sudo snap install snapd
 sudo snap install --classic --beta thefuck

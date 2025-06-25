@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+paru_ft() {
+    sudo paru -S --noconfirm --needed "$1"
+}
+
+pamac_ft(){
+    sudo pamac -S --needed --noconfirm "$1"
+}
+
+
+pamac_ft mopidy spotify-launcherw

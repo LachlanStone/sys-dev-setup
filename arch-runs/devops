@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+paru_ft() {
+    sudo paru -S --noconfirm --needed "$1"
+}
+
+pamac_ft(){
+    sudo pamac -S --needed --noconfirm "$1"
+}
+
+# Install the baseline of tools required
+pamac_ft git make
+paru_ft go go-tools  
+
+
+# Install Teraform Installer and Teraform Lauguage Server
+paru_ft tenv-bin terraform-ls
+# This is installing teraform and OpenTofu for me
+# https://github.com/tofuutils/tenv
+tenv tofu install
+tenv tf install
+
+# Install Packer
+paru_ft packer
+
+# Setup of the Qemu Server Services on the machine
+pamac_ft qemu-system-x86 qemu-system cpu-checker libguestfs-tools

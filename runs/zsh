@@ -15,9 +15,28 @@ if [ -z "$zshstatus" ]; then
   # Install Oh My Zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
+if [ -f ~/.config];then
+	mkdir ~/.config
+else
+	echo "Directory Exists"
+fi
+
+if [ -f ~/.oh-my-zsh]; then
+	mv -R ~/.oh-my-zsh ~/.config/oh-my-zsh
+	CURRENTDIR=$PWD
+	cd ~/.config/oh-my-zsh
+	sudo rm -rf .git
+	cd $CURRENTDIR
+else
+	echo ZSH is already moved
+fi
+
+
+
 # Define the ZSH_CUSTOM variable if it is not already set
 if [ -z "$ZSH_CUSTOM" ]; then
-  export ZSH_CUSTOM=~/.oh-my-zsh/custom
+  export ZSH_CUSTOM=~/.config/oh-my-zsh/custom
 fi
 
 # Clone the zsh-autosuggestions plugin
@@ -34,3 +53,4 @@ git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/pl
 # This plugin provides syntax highlighting for the `bat` command in zsh.
 git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 
+git clone https://github.com/bilelmoussaoui/flatpak-zsh-completion $ZSH_CUSTOM/plugins/flatpak
