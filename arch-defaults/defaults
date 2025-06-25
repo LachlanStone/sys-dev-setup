@@ -7,7 +7,9 @@ pacman_ft(){
     sudo pacman -S --needed --noconfirm "$1"
 }
 
-pacman_ft wireguard wireguard-tools nmap
-pacman_ft lftp
-pacman_ft btop htop
-pacman_ft nfs-common rsync
+# Setup Paru
+pacman_ft base-devel
+git clone https://aur.archlinux.org/paru.git
+pushd paru || exit
+makepkg -si
+popd || exit
