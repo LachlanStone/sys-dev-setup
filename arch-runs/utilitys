@@ -10,4 +10,4 @@ pacman_ft(){
 pacman_ft wireguard wireguard-tools nmap
 pacman_ft lftp
 pacman_ft btop htop
-pacman_ft nfs-common rsync
+pacman_ft nfs-utils  rsync

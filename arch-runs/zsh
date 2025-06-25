@@ -27,7 +27,7 @@ if [ -z "$zshstatus" ]; then
   else
     sudo mkdir ~/.config
   fi 
-  mv -f ~/.oh-my-zsh ~/.config/oh-my-zsh
+  sudo mv -f ~/.oh-my-zsh ~/.config/oh-my-zsh
   rm -rf ~/.oh-my-zsh
 fi
 

@@ -11,5 +11,5 @@ pacman_ft(){
 pacman_ft base-devel
 git clone https://aur.archlinux.org/paru.git
 pushd paru || exit
-makepkg -si
+makepkg -si --needed --noconfirm
 popd || exit
