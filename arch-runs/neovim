@@ -8,5 +8,5 @@ pacman_ft(){
 }
 
 pacman_ft neovim lua51 luarocks lua-language-server
-paru_ft nerd-fonts-git
+# paru_ft nerd-fonts-git
 
