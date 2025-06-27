@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 paru_ft() {
-    sudo paru -S --noconfirm --needed "$1"
+    paru-S --noconfirm --needed "$1"
 }
 
 pacman_ft(){
