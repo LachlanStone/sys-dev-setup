@@ -7,4 +7,7 @@ pacman_ft(){
     sudo pacman -S --needed --noconfirm "$1"
 }
 
+# Microsoft Visual Studio Code
 pacman_ft code
+# Github Desktop
+paru_ft github-desktop
