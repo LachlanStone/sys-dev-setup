@@ -7,4 +7,4 @@ pacman_ft(){
     sudo pacman -S --needed --noconfirm "$1"
 }
 
-paru_ft ghostty
+paru_ft ipscan

@@ -7,4 +7,5 @@ pacman_ft(){
     sudo pacman -S --needed --noconfirm "$1"
 }
 
-paru_ft ghostty
+# This is Telegram Desktop
+paru_ft ayugram-desktop
