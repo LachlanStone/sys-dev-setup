@@ -38,7 +38,7 @@ arch-runs(){
 }
 
 arch-desktop(){
-  if [ "$Desktop" = true ] || ["$BOTH" = true ]; then
+  if [ "$DESKTOP" = true ] || ["$BOTH" = true ]; then
     if command -v pacman &> /dev/null; then
       debug "$(set_color green) Starting Arch Desktop Install $(set_color)"      
       runs_dir=$(find "$script_dir"/arch-desktop -mindepth 1 -maxdepth 1 -executable)
