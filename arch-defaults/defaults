@@ -14,3 +14,7 @@ pushd paru || exit
 makepkg -si --needed --noconfirm
 paru -Sua --noconfirm --needed
 popd || exit
+
+# Update the Operating System
+sudo pacman -Syuu
+
