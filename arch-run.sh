@@ -38,7 +38,7 @@ arch-runs(){
 }
 
 arch-desktop(){
-  if [ "$Desktop" = true ]; then
+  if [ "$Desktop" = true ] || ["$BOTH" = true ]; then
     if command -v pacman &> /dev/null; then
       debug "$(set_color green) Starting Arch Desktop Install $(set_color)"      
       runs_dir=$(find "$script_dir"/arch-desktop -mindepth 1 -maxdepth 1 -executable)
@@ -49,6 +49,19 @@ arch-desktop(){
   fi   
 }
 
+arch-apps(){
+  if [ "$APPS" = true ] || ["$BOTH" = true ]; then
+    if command -v pacman &> /dev/null; then
+      debug "$(set_color green) Starting Arch Desktop Appts Install $(set_color)"      
+      runs_dir=$(find "$script_dir"/arch-desktop-apps -mindepth 1 -maxdepth 1 -executable)
+      for components in $runs_dir; do
+          $components
+      done
+    fi
+  fi   
+}
+
 arch-required
 arch-runs
 arch-desktop
+arch-apps
