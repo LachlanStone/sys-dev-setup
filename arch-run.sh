@@ -2,7 +2,7 @@
 # Define the Script Directory
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 DEBUG=true
-Desktop=false
+DESKTOP=false
 
 set_color() {
     case "$1" in
@@ -38,7 +38,7 @@ arch-runs(){
 }
 
 arch-desktop(){
-  if [ "$DESKTOP" = true ] || ["$BOTH" = true ]; then
+  if [ "$DESKTOP" = true ] || [ "$BOTH" = true ]; then
     if command -v pacman &> /dev/null; then
       debug "$(set_color green) Starting Arch Desktop Install $(set_color)"      
       runs_dir=$(find "$script_dir"/arch-desktop -mindepth 1 -maxdepth 1 -executable)
@@ -50,7 +50,7 @@ arch-desktop(){
 }
 
 arch-apps(){
-  if [ "$APPS" = true ] || ["$BOTH" = true ]; then
+  if [ "$APPS" = true ] || [ "$BOTH" = true ]; then
     if command -v pacman &> /dev/null; then
       debug "$(set_color green) Starting Arch Desktop Appts Install $(set_color)"      
       runs_dir=$(find "$script_dir"/arch-desktop-apps -mindepth 1 -maxdepth 1 -executable)
