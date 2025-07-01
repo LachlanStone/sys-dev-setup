@@ -10,4 +10,4 @@ pacman_ft(){
 # Microsoft Visual Studio Code
 pacman_ft code github-cli
 # Github Desktop
-yay_ft github-desktop-git
+sudo flatpak install flathub io.github.shiftey.Desktop
