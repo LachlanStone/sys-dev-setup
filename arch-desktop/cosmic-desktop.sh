@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+paru_ft() {
+    paru -S --noconfirm --needed "$1"
+}
+
+pacman_ft(){
+    sudo pacman -S --needed --noconfirm "$1"
+}
+
+paru_ft cosmic-session 

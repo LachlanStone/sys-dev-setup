@@ -61,7 +61,8 @@ arch-apps(){
   fi   
 }
 
-arch-required
-arch-runs
+
+# arch-required
+# arch-runs
 arch-desktop
 arch-apps
