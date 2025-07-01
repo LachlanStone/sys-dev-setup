@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-paru_ft() {
-    paru -S --noconfirm --needed "$1"
+yay_ft() {
+    yay -S --noconfirm --needed "$1"
 }
 
 pacman_ft(){
@@ -9,18 +9,18 @@ pacman_ft(){
 
 # Install the baseline of tools required
 pacman_ft git make
-paru_ft go go-tools  
+yay_ft go go-tools  
 
 
 # Install Teraform Installer and Teraform Lauguage Server
-paru_ft tenv-bin terraform-ls
+yay_ft tenv-bin terraform-ls
 # This is installing teraform and OpenTofu for me
 # https://github.com/tofuutils/tenv
 tenv tofu install
 tenv tf install
 
 # Install Packer
-paru_ft packer
+yay_ft packer
 
 # Setup of the Qemu Server Services on the machine
 pacman_ft qemu-system-x86 qemu-system cpu-checker libguestfs-tools

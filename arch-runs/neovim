@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-paru_ft() {
-    paru -S --noconfirm --needed "$1"
+yay_ft() {
+    yay -S --noconfirm --needed "$1"
 }
 
 pacman_ft(){
@@ -8,5 +8,5 @@ pacman_ft(){
 }
 
 pacman_ft neovim lua51 luarocks lua-language-server
-# paru_ft nerd-fonts-git
+# yay_ft nerd-fonts-git
 

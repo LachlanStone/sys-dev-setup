@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-paru_ft() {
-    paru -S --noconfirm --needed "$1"
+yay_ft() {
+    yay -S --noconfirm --needed "$1"
 }
 
 pacman_ft(){
@@ -8,4 +8,6 @@ pacman_ft(){
 }
 
 # This is Telegram Desktop
-paru_ft ayugram-desktop
+#yay_ft ayugram-desktop
+
+pacman_ft telegram-desktop

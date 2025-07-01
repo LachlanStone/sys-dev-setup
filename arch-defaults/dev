@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-paru_ft() {
-    paru -S --noconfirm --needed "$1"
+yay_ft() {
+    yay -S --noconfirm --needed "$1"
 }
 
 pacman_ft(){
@@ -8,6 +8,10 @@ pacman_ft(){
 }
 
 # Install Rust using rustup
+if [ -f rustup-init.sh ]; then
+    rm rustup-init.sh
+fi
+
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup-init.sh
 chmod +x rustup-init.sh
 ./rustup-init.sh -y --default-toolchain stable --profile minimal

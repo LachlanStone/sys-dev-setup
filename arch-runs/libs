@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-paru_ft() {
-    paru -S --noconfirm --needed "$1"
+yay_ft() {
+    yay -S --noconfirm --needed "$1"
 }
 
 pacman_ft(){
@@ -16,4 +16,4 @@ pacman_ft tldr
 tldr --update --color --auto-update-interval 5
 
 # Install TheFuc
-paru_ft thefuck
+yay_ft thefuck
