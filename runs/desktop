@@ -5,4 +5,14 @@ sudo flatpak install flathub app.zen_browser.zen -y
 
 # Testing these terminals once I pick one I will revert to here
 sudo apt install alacritty -y
+
 sudo snap install ghostty --classic
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /snap/ghostty/current/bin/ghostty 1
+sudo update-alternatives --set x-terminal-emulator /snap/ghostty/current/bin/ghostty
+
+# Setup the GDM3 as the default display manager when cosmic is installed
+sudo apt install cosmic
+echo "gdm3 shared/default-x-display-manager select gdm3" | sudo debconf-set-selections
+# Reconfigure display manager non-interactively
+sudo DEBIAN_FRONTEND=noninteractive dpkg-reconfigure gdm3
+

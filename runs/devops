@@ -3,25 +3,26 @@ sudo apt install -y ansible snap
 
 sudo snap install snapd
 
-# This script configures terraform and opentofu
-sudo snap install --classic terraform 
+LATEST_VERSION=$(curl --silent https://api.github.com/repos/tofuutils/tenv/releases/latest | jq -r .tag_name)
+curl -O -L "https://github.com/tofuutils/tenv/releases/latest/download/tenv_${LATEST_VERSION}_amd64.deb"
+sudo dpkg -i "tenv_${LATEST_VERSION}_amd64.deb"
 
-## This component sets up the terraform linter and teraform lauguage server
+if [ -n "$ZSH_VERSION" ]; then
+    exec zsh -l
+elif [ -n "$BASH_VERSION" ]; then
+    exec bash -l
+fi
+tenv tofu install latest
+tenv tf install latest
+
+# ## This component sets up the terraform linter and teraform lauguage server
 curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | sudo bash
 sudo apt install -y terraform-ls 
 
-
-# Install OpenTofu via Deb
-curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.sh -o install-opentofu.sh
-chmod +x install-opentofu.sh
-./install-opentofu.sh --install-method deb
-rm -f install-opentofu.sh
-
 # Install Packer via Deb
-wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update
-sudo apt install packer 
+sudo apt-get update && sudo apt-get install packer
 
 # Setup the Virt Cusomize Component
 sudo apt install libguestfs-tools -y
